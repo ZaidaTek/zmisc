@@ -6,7 +6,7 @@
 ### General Notes
     - the reference language for the derival of general style is C
     - some/most conventions (e.g. MACRO_CASE macro-variables) are copied
-    - choose '[UNTITLED] style' with regards to naming precendence
+    - choose '[UNKNOWN, presumed existing] style' with regards to naming precendence
         - prefer TAG_[DOMAIN][METHOD]() rathen than (English) widespread TAG_[METHOD][DOMAIN]()
         - e.g. TAG_ReadFile(), TAG_WriteFile() should be TAG_FileRead(), TAG_FileWrite()
         - this makes it easier to search and replace more contextually related text-snippets in files
