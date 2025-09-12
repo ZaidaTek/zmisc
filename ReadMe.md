@@ -80,17 +80,25 @@
         void lFunction(void *iiData) {
             void llFunction(void *iiiData) {
                 int lllVariable;
-                for (int i = 0; i < 0x100; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
+                for (int i = 0x1; i; i <<= 1) {for (int ii = 0x1; ii != i; ii <<= 1) {/*...*/}}
             }
             int llVariable;
-            for (int i = 0; i < 0x100; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
+            for (int i = 0; i <= 0xff; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
         }
         int lVariable;
-        for (int i = 0; i < 0x100; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
+        for (int i = 0; i < 100; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
     }
 
 ### Numeric representation
-    int lCount = 16; // decimal notation when variable is used for its quantative/scalar value
-    int lBits = 0x10; // hexadecimal notation when variable is used for its binary bit properties
-    float lFloat = 8192.0; // always place the optional decimal and zero as well, regardless of (in)significance
+    // decimal notation when variable is used for its quantative/scalar value
+	int lCount = 16;
+	
+	// hexadecimal notation when variable is used for its binary bit properties
+    int lBits = 0x10;
+	
+	// Notable exceptions to the above are e.g. when a hexadecimal value is used as a scalar value,
+	// but retains its significance, due to its hexadecimal value (see nesting example above, 2nd and 3rd level for-loops)
+    
+	// always place the optional decimal and zero as well, regardless of (in)significance
+	float lFloat = 8192.0;
 
