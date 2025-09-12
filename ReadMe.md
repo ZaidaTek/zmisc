@@ -61,7 +61,7 @@
     - it is acceptable (at programmer discretion) to modify non-pointer iInput variables inside their functions
         - though it should be avoided, e.g. "int lInput = iInput; lInput += ..." is preferred,
         - unless, usually in tighter functions, such a redeclaration is (not just ostensibly) redundant,
-        - e.g. iInput is never needed in its original form anymore (and can reasonably be inferred without prior knowledge)
+        - e.g. iInput is never needed in its original form anymore (which can reasonably be inferred without prior knowledge)
     - pointer-typed *iInputVariable should always only be read from, and also be defined "const"
     - pointer-typed *oTargetVariable should always only be written to
     - pointer-typed *ioVariable should be used when it is both a target to read from and to write to
