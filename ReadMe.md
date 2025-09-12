@@ -102,7 +102,7 @@
 	// Notable exceptions to the above are
 	// e.g. when a hexadecimal value is used as a scalar value,
 	// but retains its significance, due to its hexadecimal value
-	// (see nesting example above, 2nd and 3rd level for-loops)
+	// (see nesting example above, 2nd-level for-loop)
 
 ### Numerals, Float
 	float lFloat = 8192.0;
