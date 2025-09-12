@@ -63,17 +63,17 @@
         i   input       func    int gCRC32(const void *iData); // func params that are only read
         o   output      func    void gGetTimeNow(int *oTime); // func params that only are written to
         io  in/out      func    void gCheckAndCoerce(void *ioData); // func params both read and written to
-    - thus, according to the presented style-guidelines, it must be
-        - "*oData = lResult" or "return lResult" are common scenarios
-        - "return oTarget" is not an impossible scenario (e.g. a copy function also returning its target pointer)
-        - "int oResult" declared inside a function is illegal, as it MUST be declared "int lResult" instead
+    - pointer-typed *iInputVariable should always only be read from, and also be defined "const"
+    - pointer-typed *oTargetVariable should always only be written to
+    - pointer-typed *ioVariable should be used when it is both a target to read from and to write to
     - it is acceptable (at programmer discretion) to modify non-pointer iInput variables inside their functions
         - though it should be avoided, e.g. "int lInput = iInput; lInput += ..." is preferred,
         - unless, usually in tighter functions, such a redeclaration is (not just ostensibly) redundant,
         - e.g. iInput is never needed in its original form anymore (which can reasonably be inferred without prior knowledge)
-    - pointer-typed *iInputVariable should always only be read from, and also be defined "const"
-    - pointer-typed *oTargetVariable should always only be written to
-    - pointer-typed *ioVariable should be used when it is both a target to read from and to write to
+    - thus, according to the presented style-guidelines, it must be
+        - "*oData = lResult" or "return lResult" are common scenarios
+        - "return oTarget" is not an impossible scenario (e.g. a copy function also returning its target pointer)
+        - "int oResult" declared inside a function is illegal, as it MUST be declared "int lResult" instead
 
 ### Variable, Nesting
     void gFunction(void *iData) {
