@@ -90,15 +90,17 @@
     }
 
 ### Numeric representation
-    // decimal notation when variable is used for its quantative/scalar value
 	int lCount = 16;
+    // decimal notation when variable is used for its quantative/scalar value
 	
-	// hexadecimal notation when variable is used for its binary bit properties
     int lBits = 0x10;
+	// hexadecimal notation when variable is used for its binary bit properties
 	
-	// Notable exceptions to the above are e.g. when a hexadecimal value is used as a scalar value,
-	// but retains its significance, due to its hexadecimal value (see nesting example above, 2nd and 3rd level for-loops)
+	// Notable exceptions to the above are
+	// e.g. when a hexadecimal value is used as a scalar value,
+	// but retains its significance, due to its hexadecimal value
+	// (see nesting example above, 2nd and 3rd level for-loops)
     
-	// always place the optional decimal and zero as well, regardless of (in)significance
 	float lFloat = 8192.0;
+	// always place the optional decimal and zero as well, regardless of (in)significance
 
