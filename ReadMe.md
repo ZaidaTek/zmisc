@@ -50,6 +50,10 @@
     - the 'a' prefix is only to be used in ASM contexts
 
 ### Variable, Prefixes
+    - variables are prefixed, usually with a single-letter
+    - these are COMPLETELY UNRELATED to the concepts in Hungarian Notation
+        - as prefixes should indicate scope and provide semantic meaning, not type inference
+        - and, rather, it is unfortunate variable-prefixes are often conflated with Hungarian Notation or vice-versa
     - the following is a table of commonly used prefixes, in the format prefix:mnemonic:domain:example
         g   global      scope   char gStackBuffer[2048]; // variable accessible from everywhere
         l   local       scope   int lContinue = 0x1; // variable accessible only within scope
@@ -59,10 +63,6 @@
         i   input       func    int gCRC32(const void *iData); // func params that are only read
         o   output      func    void gGetTimeNow(int *oTime); // func params that only are written to
         io  in/out      func    void gCheckAndCoerce(void *ioData); // func params both read and written to
-    - variables are prefixed, usually with a single-letter
-    - these are COMPLETELY UNRELATED to the concepts in Hungarian Notation
-        - as prefixes should indicate scope and provide semantic meaning, not type inference
-        - and, rather, it is unfortunate variable-prefixes are often conflated with Hungarian Notation or vice-versa
     - thus, according to the presented style-guidelines, it must be
         - "*oData = lResult" or "return lResult" are common scenarios
         - "return oTarget" is not an impossible scenario (e.g. a copy function also returning its target pointer)
