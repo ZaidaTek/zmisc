@@ -103,8 +103,24 @@
 	// e.g. when a hexadecimal value is used as a scalar value,
 	// but retains its significance, due to its hexadecimal value
 	// (see nesting example above, 2nd-level for-loop)
+	// These are, however, left to programmer discretion
+	// in doubt: prefer strict interpretation
+	// (i.e. e.g. the *amount* to bitshift is a scalar value at its core)
 
 ### Numerals, Float
-	float lFloat = 8192.0;
+	float lFloat = 8192; // no
+	float lFloat = 8192.0; // yes
 	// always place the optional decimal and zero as well, regardless of (in)significance
+	float lFloat = .5; // no
+	float lFloat = 0.5; // yes
+	// same for leading zeroes
+	float lFloat = 1e10; // (maybe)
+	float lFloat = 1.0e3; // yes
+	// one exception might be scientifid notation,
+	// where a deliberately omitted decimal might explicitly
+	// intend to signify its use as a magnitude of order
+	// (at this point the author is uncertain,
+	// whether 1e3 is automatically float or not,
+	// without decimal point)
+	
 
