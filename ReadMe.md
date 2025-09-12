@@ -89,18 +89,22 @@
         for (int i = 0; i < 100; ++i) {for (int ii = 0; ii < i; ++ii) {/*...*/}}
     }
 
-### Numeric representation
-	int lCount = 16;
+### Numerals, Integer
+	// Prefer using unsigned whenever possible
+	// as it is fully well-defined, especially/particularly overflow behaviour
+	
+	unsigned int lCount = 16;
     // decimal notation when variable is used for its quantative/scalar value
 	
-    int lBits = 0x10;
+    unsigned int lBits = 0x10;
 	// hexadecimal notation when variable is used for its binary bit properties
 	
 	// Notable exceptions to the above are
 	// e.g. when a hexadecimal value is used as a scalar value,
 	// but retains its significance, due to its hexadecimal value
 	// (see nesting example above, 2nd and 3rd level for-loops)
-    
+
+### Numerals, Float
 	float lFloat = 8192.0;
 	// always place the optional decimal and zero as well, regardless of (in)significance
 
