@@ -50,6 +50,15 @@
     - the 'a' prefix is only to be used in ASM contexts
 
 ### Variable, Prefixes
+    - the following is a table of commonly used prefixes, in the format prefix:mnemonic:domain:example
+        g   global      scope   char gStackBuffer[2048]; // variable accessible from everywhere
+        l   local       scope   int lContinue = 0x1; // variable accessible only within scope
+        r   runtime     scope   int rPrivate = 0x1; // usually only found inside libraries, with scope limited to it
+        m   macro       scope   #define mFUNCTION(iPARAM, oTARGET) ({...}) // shall never leave a dangling #undef
+        a   asm         scope   "lds r25, %[aIN]\nsts %[aOUT], r25\nreti\n" :: [aIN]"i"(&gSource), [aOUT]"i"(&gTarget)
+        i   input       func    int gCRC32(const void *iData); // func params that are only read
+        o   output      func    void gGetTimeNow(int *oTime); // func params that only are written to
+        io  in/out      func    void gCheckAndCoerce(void *ioData); // func params both read and written to
     - variables are prefixed, usually with a single-letter
     - these are COMPLETELY UNRELATED to the concepts in Hungarian Notation
         - as prefixes should indicate scope and provide semantic meaning, not type inference
@@ -65,15 +74,6 @@
     - pointer-typed *iInputVariable should always only be read from, and also be defined "const"
     - pointer-typed *oTargetVariable should always only be written to
     - pointer-typed *ioVariable should be used when it is both a target to read from and to write to
-    - the following is a table of commonly used prefixes, in the format prefix:mnemonic:domain:example
-        g   global      scope   char gStackBuffer[2048]; // variable accessible from everywhere
-        l   local       scope   int lContinue = 0x1; // variable accessible only within scope
-        r   runtime     scope   int rPrivate = 0x1; // usually only found inside libraries, with scope limited to it
-        m   macro       scope   #define mFUNCTION(iPARAM, oTARGET) ({...}) // shall never leave a dangling #undef
-        a   asm         scope   "lds r25, %[aIN]\nsts %[aOUT], r25\nreti\n" :: [aIN]"i"(&gSource), [aOUT]"i"(&gTarget)
-        i   input       func    int gCRC32(const void *iData); // func params that are only read
-        o   output      func    void gGetTimeNow(int *oTime); // func params that only are written to
-        io  in/out      func    void gCheckAndCoerce(void *ioData); // func params both read and written to
 
 ### Variable, Nesting
     void gFunction(void *iData) {
