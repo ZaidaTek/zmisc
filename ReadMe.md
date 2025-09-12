@@ -120,7 +120,7 @@
 	// where a deliberately omitted decimal might explicitly
 	// intend to signify its use as a magnitude of order
 	// (at this point the author is uncertain,
-	// whether 1e3 is automatically float or not,
-	// without decimal point)
+	//  whether 1e3 is automatically float or not,
+	//  without decimal point)
 	
 
