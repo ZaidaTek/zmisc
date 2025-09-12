@@ -66,6 +66,7 @@
     - pointer-typed *iInputVariable should always only be read from, and also be defined "const"
     - pointer-typed *oTargetVariable should always only be written to
     - pointer-typed *ioVariable should be used when it is both a target to read from and to write to
+	- 'const' has no direct effect on prefixing (more common the other way around, prefix *iVar implying const)
     - it is acceptable (at programmer discretion) to modify non-pointer iInput variables inside their functions
         - though it should be avoided, e.g. "int lInput = iInput; lInput += ..." is preferred,
         - unless, usually in tighter functions, such a redeclaration is (not just ostensibly) redundant,
