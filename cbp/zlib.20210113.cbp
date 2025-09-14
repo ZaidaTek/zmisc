@@ -35,15 +35,12 @@
 		<Unit filename="crc32.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="crc32.h" />
 		<Unit filename="deflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="deflate.h" />
 		<Unit filename="gzclose.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="gzguts.h" />
 		<Unit filename="gzlib.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -59,29 +56,21 @@
 		<Unit filename="inffast.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="inffast.h" />
-		<Unit filename="inffixed.h" />
 		<Unit filename="inflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="inflate.h" />
 		<Unit filename="inftrees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="inftrees.h" />
 		<Unit filename="trees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="trees.h" />
 		<Unit filename="uncompr.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="zconf.h" />
-		<Unit filename="zlib.h" />
 		<Unit filename="zutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="zutil.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
