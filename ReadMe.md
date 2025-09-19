@@ -7,15 +7,15 @@
     - the reference language for the derival of general style is C
     - some/most conventions (e.g. MACRO_CASE macro-variables) are copied
     - choose '[UNKNOWN, presumed existing] style' with regards to naming precendence
-        - prefer TAG_[DOMAIN][METHOD]() rathen than (English) widespread TAG_[METHOD][DOMAIN]()
+        - prefer TAG_[DOMAIN][METHOD]() rather than (English) widespread TAG_[METHOD][DOMAIN]()
         - e.g. TAG_ReadFile(), TAG_WriteFile() should be TAG_FileRead(), TAG_FileWrite()
         - this makes it easier to search and replace more contextually related text-snippets in files
     - due to using variable-prefixing, aRelevantCapitalization is accepted as a trade-off in enhancing readability
     - PascalCaseIsUsed_ButSnakeUnderlining_RelevantContext_Part_0 is fine (_Part0 is also fine)
     - due to heavy reliance on both 'l' and 'i' as variable prefixes
-        - a font that makes them easily discernbile is recommended
-        - otherwise, 'i' should be replaced by 'z', as it the less common prefix in existing code
-    - in doubt: prefer more braces to make precedence clear
+        - a font that makes them easily discernible is recommended
+        - otherwise, 'i', being the less common prefix, could be replaced by 'z'
+    - in doubt: prefer more braces to make (intended) precedence clear
     - avoid skipping (any) optional curly braces following if, else, for, while, switch, etc.
     - (modern) horizontal space can and should be used
         - for (int i = 0; i < 100; ++i) {oData[i] = gFunction(i); lResult |= oData[i]; if (lResult == 0xff) {break;}}
@@ -28,10 +28,10 @@
 ### Variable, Notes
     - avoid single-letter variables, use only with extremely limited and short scope
         - also only use easily inferred context for single-letters,
-        - e.g. i: iterator, x,y,z: coordinates, r,g,b,a: color values
-        - do NOT (never) use single-letter variables for pointers
-            - void *lContext is preferred
-            - void *ptr is an acceptable (temporary) name
+        - e.g. i: iterator, k,v: key, value, x,y,z: coordinates, r,g,b,a: color values
+    - do NOT, in fact, never use single-letter variables for pointers
+        - void *lContext is preferred
+        - void *ptr is an acceptable (temporary) name
     - choose to be more verbose rather than not
     - avoid (contrived) abbreviations as much as possible
     - virtually all variables are prefixed, usually with a single-letter
@@ -42,11 +42,13 @@
     - single-letter variables are (inherently?) exempt from prefixing-(but not nesting)-guidelines
     - functions are variables, that are functions; in this sense, they are not exempt from prefixing
         - unless there is a global 'TAG_', in which case, global functions are 'TAG_FunctionName()'
+        - global variables, however, should retain their prefix, e.g. "int gTAG_Init = 0x1"
     - the 'r' prefix is only to be used internally
         - implying it is only used inside libraries for variables that are not accessible from outside the library
     - the 'm' prefix is also only to be used internally for macro-functions
         - 'pseudo-functions' (i.e. macro-functions meant to look like real functions) should emulate their counterparts instead
-        - there are conflicting style-implementations of macros regarding their capitalization, it is yet to be defined
+        - there are inconsistent style-implementations of macros regarding prefixing in existing code
+        - these should be clarified, but otherwise macros are the only domain omitting prefixes might be deemed acceptable
     - the 'a' prefix is only to be used in ASM contexts
 
 ### Variable, Prefixes
